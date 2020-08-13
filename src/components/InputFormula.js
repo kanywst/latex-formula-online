@@ -5,7 +5,7 @@ export default class InputFormula extends React.Component {
         return(
             <div className="InputFormula">
                 <div className="">
-                    <textarea name='formula' className="" onChange={this.props.onTextChange}/>
+                    <textarea name='formula' value={this.props.val} className="" onChange={this.props.onTextChange}/>
                 </div>
             </div>
         );

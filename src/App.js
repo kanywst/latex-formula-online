@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import InputFormula from './components/InputFormula'
 import OutputFormula from './components/OutputFormula'
+import ButtonFormula from './components/ButtonFormula'
 import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
@@ -11,8 +12,11 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.onTextChange = this.onTextChange.bind(this)
+    this.onButtonClick = this.onButtonClick.bind(this)
     this.state = {
-      formula: ""
+      formula: "",
+      val: "",
+      json: require('./latex-commands.json')
     }
   }
 
@@ -24,6 +28,13 @@ class App extends React.Component{
     }
   }
 
+  onButtonClick(e){
+    console.log(e.target.value)
+    this.setState({
+      "val": this.state.val + e.target.value,
+    });
+  }
+
   render(){
     return(
       <div className="App">
@@ -32,10 +43,23 @@ class App extends React.Component{
         </div>
         <Container>
           <Row>
-            <Col md={4}>
+            <div className="latex-commands-button">
+              {this.state.json.commands.symbol.map((m,i)=>{
+                return <ButtonFormula onButtonClick={this.onButtonClick} key={i} command={m} />
+              })}
+              {this.state.json.commands.greek_lowcase.map((m,i)=>{
+                return <ButtonFormula onButtonClick={this.onButtonClick} key={i} command={m} />
+              })}
+              {this.state.json.commands.greek_upcase.map((m,i)=>{
+                return <ButtonFormula onButtonClick={this.onButtonClick} key={i} command={m} />
+              })}
+            </div>
+          </Row>
+          <Row>
+            <Col md={{ span: 4, offset: 4 }}>
               <InputFormula onTextChange={this.onTextChange}/>
             </Col>
-            <Col md={4}>
+            <Col md={{ span: 4, offset: 4 }}>
               <OutputFormula formula={this.state.formula}/>
             </Col>
           </Row>
