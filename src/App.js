@@ -1,13 +1,16 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import InputFormula from './components/InputFormula'
 import OutputFormula from './components/OutputFormula'
+import { Container } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
+
 
 class App extends React.Component{
   constructor(props){
     super(props);
     this.onTextChange = this.onTextChange.bind(this)
-    this.onButtonClick = this.onButtonClick.bind(this)
     this.state = {
       formula: ""
     }
@@ -21,21 +24,22 @@ class App extends React.Component{
     }
   }
 
-  onButtonClick(){
-    if(this.state.formula === ""){
-      alert('formula empty')
-      return
-    }
-  }
-
   render(){
     return(
       <div className="App">
         <div className="App-header">
           <h1>Latex Formula Online</h1>
         </div>
-        <InputFormula onTextChange={this.onTextChange} onButtonClick={this.onButtonClick}/>
-        <OutputFormula formula={this.state.formula}/>
+        <Container>
+          <Row>
+            <Col md={4}>
+              <InputFormula onTextChange={this.onTextChange}/>
+            </Col>
+            <Col md={4}>
+              <OutputFormula formula={this.state.formula}/>
+            </Col>
+          </Row>
+        </Container>
       </div>
     )
   }
