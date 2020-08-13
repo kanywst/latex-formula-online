@@ -10,7 +10,7 @@ export default class OutputFormula extends React.Component{
             <div className="OutputFormula">
                 <div className="">
                     <p className="">
-                        <BlockMath math={`\\frac{1}{2}${this.props.formula}`}></BlockMath>
+                        <BlockMath math={` ${this.props.formula} `}></BlockMath>
                     </p>
                 </div>
             </div>
