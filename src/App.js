@@ -61,7 +61,7 @@ class App extends React.Component{
           </Row>
           <Row>
             <Col md={{ span: 4, offset: 4 }}>
-              <InputFormula onTextChange={this.onTextChange}/>
+              <InputFormula formula={this.state.formula} onTextChange={this.onTextChange}/>
             </Col>
             <Col md={{ span: 4, offset: 4 }}>
               <OutputFormula formula={this.state.formula}/>
