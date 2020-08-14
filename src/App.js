@@ -3,9 +3,7 @@ import './App.scss';
 import InputFormula from './components/InputFormula'
 import OutputFormula from './components/OutputFormula'
 import ButtonFormula from './components/ButtonFormula'
-import { Container } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 
 class App extends React.Component{
@@ -57,17 +55,28 @@ class App extends React.Component{
               {this.state.json.commands.greek_upcase.map((m,i)=>{
                 return <ButtonFormula onButtonClick={this.onButtonClick} key={i} command={m} />
               })}
+              {this.state.json.commands.arrow.map((m,i)=>{
+                return <ButtonFormula onButtonClick={this.onButtonClick} key={i} command={m} />
+              })}
+              {this.state.json.commands.formula.map((m,i)=>{
+                return <ButtonFormula onButtonClick={this.onButtonClick} key={i} command={m} />
+              })}
             </div>
           </Row>
           <Row>
-            <Col md={{ span: 4, offset: 4 }}>
-              <InputFormula formula={this.state.formula} onTextChange={this.onTextChange}/>
-            </Col>
-            <Col md={{ span: 4, offset: 4 }}>
-              <OutputFormula formula={this.state.formula}/>
-            </Col>
+              <Col md="5">
+                <InputFormula formula={this.state.formula} onTextChange={this.onTextChange}/>
+              </Col>
+              <Col md="5">
+                <OutputFormula formula={this.state.formula}/>
+              </Col>
           </Row>
         </Container>
+        <footer class="page-footer font-small">
+          <div class="footer-copyright text-center py-3">
+            <a href="https://github.com/kanywst/latex-formula-online">Github</a>
+          </div>
+        </footer>
       </div>
     )
   }

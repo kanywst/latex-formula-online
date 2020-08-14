@@ -68,6 +68,17 @@
             "\\fallingdotseq"
         ],
         "arrow": [],
-        "formula": []
+        "formula": [
+            "\\frac{1}{2}",
+            "a_{ij}",
+            "{}_{n}C_{k}",
+            "{}^{i}_{j}T^{k}_{h}",
+            "\\sqrt[3]{x}",
+            "\\sum_{k=1}^{n}",
+            "\\lim_{h \\to 0}",
+            "\\int_{1}^{3}",
+            "\\overrightarrow{AB}",
+            "\\begin{pmatrix} 2 & 1 \\cr 2 & 3 \\end{pmatrix}"
+        ]
     }
 }
