@@ -1,13 +1,14 @@
 import React from "react";
-import 'katex/dist/katex.min.css';
-import { InlineMath } from 'react-katex';
+import MathJax from 'react-mathjax2'
+
 
 export default class ButtonFormula extends React.Component{
     render(){
         return(
             <button className="" onClick={this.props.onButtonClick} value={this.props.command}>
-                <InlineMath math={` ${this.props.command} `}>
-                </InlineMath>
+                <MathJax.Context input='ascii'>
+                        <MathJax.Node inline>{ this.props.command }</MathJax.Node>
+                </MathJax.Context>
             </button>
         )
     }

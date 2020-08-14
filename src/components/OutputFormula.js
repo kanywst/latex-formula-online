@@ -1,6 +1,6 @@
 import React from 'react';
-import 'katex/dist/katex.min.css';
-import { BlockMath } from 'react-katex';
+import MathJax from 'react-mathjax2'
+
 
 //var BlockMath = ReactKaTeX.BlockMath;
 
@@ -10,7 +10,11 @@ export default class OutputFormula extends React.Component{
             <div className="OutputFormula">
                 <div className="">
                     <p className="">
-                        <BlockMath math={` ${this.props.formula} `}></BlockMath>
+                        <MathJax.Context input='ascii'>
+                            <div>
+                                <MathJax.Node>{this.props.formula}</MathJax.Node>
+                            </div>
+                        </MathJax.Context>
                     </p>
                 </div>
             </div>
