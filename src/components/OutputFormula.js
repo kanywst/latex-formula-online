@@ -10,7 +10,7 @@ export default class OutputFormula extends React.Component{
             <div className="OutputFormula">
                 <div className="">
                     <p className="">
-                        <MathJax.Context input='ascii'>
+                        <MathJax.Context input='tex'>
                             <div>
                                 <MathJax.Node>{this.props.formula}</MathJax.Node>
                             </div>

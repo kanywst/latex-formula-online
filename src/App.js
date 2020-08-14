@@ -29,10 +29,14 @@ class App extends React.Component{
   }
 
   onButtonClick(e){
-    console.log(e.target.value)
-    this.setState({
-      "val": this.state.val + e.target.value,
-    });
+    if (e.target.value === undefined){
+      return
+    }else{
+      console.log(e.target.value)
+      this.setState({
+        "formula": this.state.formula + e.target.value,
+      });
+    }
   }
 
   render(){

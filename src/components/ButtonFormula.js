@@ -1,15 +1,16 @@
 import React from "react";
 import MathJax from 'react-mathjax2'
+import { Button } from 'react-bootstrap'
 
 
 export default class ButtonFormula extends React.Component{
     render(){
         return(
-            <button className="" onClick={this.props.onButtonClick} value={this.props.command}>
-                <MathJax.Context input='ascii'>
-                        <MathJax.Node inline>{ this.props.command }</MathJax.Node>
+            <Button className="" onClick={this.props.onButtonClick} value={this.props.command} variant="light">
+                <MathJax.Context input='tex'>
+                    <MathJax.Node inline>{ this.props.command }</MathJax.Node>
                 </MathJax.Context>
-            </button>
+            </Button>
         )
     }
 }
