@@ -1,5 +1,17 @@
 # Latex Formula Online
 
-簡単にLaTeXの数式をつくれるWebアプリケーション
+latex-formula-online is a web application that allows you to easily create LaTeX formulas
 
-https://latex-formula-online.web.app/
+## install
+
+```bash
+npm install
+```
+
+## Usage
+
+```bash
+npm start
+```
+
+https://latex-formula-online.web.app
